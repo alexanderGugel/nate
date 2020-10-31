@@ -2,7 +2,7 @@
 
 # nate
 
-[![PyPI](https://img.shields.io/pypi/v/nate)](https://pypi.org/project/nate/) [![PyPI - License](https://img.shields.io/pypi/l/nate)](https://pypi.org/project/nate/) [![Build Status](https://travis-ci.com/alexanderGugel/nate.svg?branch=master)](https://travis-ci.com/alexanderGugel/nate) [![Coverage Status](https://coveralls.io/repos/github/alexanderGugel/nate/badge.svg?branch=master)](https://coveralls.io/github/alexanderGugel/nate?branch=master)
+[![PyPI](https://img.shields.io/pypi/v/nate)](https://pypi.org/project/nate/) [![PyPI - License](https://img.shields.io/pypi/l/nate)](https://pypi.org/project/nate/) [![Build Status](https://travis-ci.com/alexanderGugel/nate.svg?branch=master)](https://travis-ci.com/alexanderGugel/nate)
 
 **nate** makes generating HTML fun. Rather than forcing you to adopt an entirely different templating language that comes with its own set of quirks, nate is built around a simple, but powerful Python DSL that enables you to easily compose trees of elements that can be translated to well-formed HTML - no more forgotten angle brackets, unbalanced tags, or unescaped user input.
 
