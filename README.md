@@ -135,7 +135,7 @@ Title("Hello World!").to_html()
 
 ```python
 steaks = ["Rib Eye", "New York Strip", "Porterhouse"]
-Ul(map(lambda user: Li(steak), steaks)).to_html()
+Ul(map(lambda steak: Li(steak), steaks)).to_html()
 ```
 
 </td>
