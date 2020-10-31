@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="nate",
-    version="0.0.2",
+    version="0.0.3",
     author="Alexander Gugel",
     author_email="alexander.gugel@gmail.com",
     description="Make generating HTML fun.",
