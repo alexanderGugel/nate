@@ -1,4 +1,4 @@
-![Library](./assets/alfons-morales-YLSwjSy7stw-unsplash.jpg)
+![Library](https://github.com/alexanderGugel/nate/raw/master/assets/alfons-morales-YLSwjSy7stw-unsplash.jpg)
 
 # nate
 
