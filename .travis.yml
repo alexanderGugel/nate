@@ -6,4 +6,5 @@ python:
   - "nightly"  # nightly build
 script:
   - flake8
+  - mypy nate tests
   - make test
