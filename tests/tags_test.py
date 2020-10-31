@@ -125,7 +125,8 @@ class TagsTest(unittest.TestCase):
 
     def test_xss(self) -> None:
         p = P("<script>alert('XSS');</script>")
-        p_expected = "<p>&lt;script&gt;alert(&#x27;XSS&#x27;);&lt;/script&gt;</p>"
+        p_expected =\
+            "<p>&lt;script&gt;alert(&#x27;XSS&#x27;);&lt;/script&gt;</p>"
         self.assertEqual(p.to_html(), p_expected)
 
         div = Div([DangerousHTML("<script>alert('XSS');</script>")])
@@ -133,9 +134,9 @@ class TagsTest(unittest.TestCase):
         self.assertEqual(div.to_html(), div_expected)
 
         text_input = Input(value="<script>alert('XSS');</script>")
-        text_input_expected = (
-            '<input value="&lt;script&gt;alert(&#x27;XSS&#x27;);&lt;/script&gt;"/>'
-        )
+        text_input_expected =\
+            '<input value="&lt;script&gt;alert(&#x27;XSS&#x27;);&lt;/\
+script&gt;"/>'
         self.assertEqual(text_input.to_html(), text_input_expected)
 
     def test_article(self) -> None:
