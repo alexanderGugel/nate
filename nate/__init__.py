@@ -1,8 +1,11 @@
 from .tags import (  # noqa: F401
-    # Core types (useful for type annotations)
+    # Core types (useful for type hints)
     BaseTag,
+    Class,
+    Attr,
+    Children,
     # Escape hatch
-    DangerousHTML,
+    DangerousHtml,
     # Wrappers
     Area,
     Base,

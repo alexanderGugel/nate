@@ -53,7 +53,7 @@ class SelfClosingTag(BaseTag):
         yield "/>"
 
 
-FullTagChildren = Union[
+Children = Union[
     BaseTag,
     str,
     Iterable[Union[BaseTag, str]],
@@ -73,7 +73,7 @@ class FullTag(BaseTag):
     """
 
     tag: str
-    children: FullTagChildren
+    children: Children
     class_: Class
     attr: Attr
 
@@ -113,10 +113,10 @@ class FullTagWithPrefix(FullTag):
 
 
 @dataclass
-class DangerousHTML(BaseTag):
+class DangerousHtml(BaseTag):
     """
     By default, all strings are escaped to prevent cross-site scripting (XSS)
-    attacks. DangerousHTML can be used to inject unescaped HTML. This should be
+    attacks. DangerousHtml can be used to inject unescaped HTML. This should be
     used sparingly. It is useful as an escape hatch.
     """
 
@@ -240,7 +240,7 @@ def Wbr(class_: Class = [], **attr: Union[str, None]) -> SelfClosingTag:
 
 
 def A(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -248,7 +248,7 @@ def A(
 
 
 def Abbr(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -256,7 +256,7 @@ def Abbr(
 
 
 def Address(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -264,7 +264,7 @@ def Address(
 
 
 def Article(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -272,7 +272,7 @@ def Article(
 
 
 def Aside(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -280,7 +280,7 @@ def Aside(
 
 
 def Audio(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -288,7 +288,7 @@ def Audio(
 
 
 def B(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -296,7 +296,7 @@ def B(
 
 
 def Bdi(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -304,7 +304,7 @@ def Bdi(
 
 
 def Bdo(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -312,7 +312,7 @@ def Bdo(
 
 
 def Blockquote(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -325,7 +325,7 @@ def Blockquote(
 
 
 def Body(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -333,7 +333,7 @@ def Body(
 
 
 def Button(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -341,7 +341,7 @@ def Button(
 
 
 def Canvas(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -349,7 +349,7 @@ def Canvas(
 
 
 def Caption(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -357,7 +357,7 @@ def Caption(
 
 
 def Cite(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -365,7 +365,7 @@ def Cite(
 
 
 def Code(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -373,7 +373,7 @@ def Code(
 
 
 def Colgroup(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -381,7 +381,7 @@ def Colgroup(
 
 
 def Command(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -389,7 +389,7 @@ def Command(
 
 
 def Datalist(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -397,7 +397,7 @@ def Datalist(
 
 
 def Dd(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -405,7 +405,7 @@ def Dd(
 
 
 def Del(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -413,7 +413,7 @@ def Del(
 
 
 def Details(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -421,7 +421,7 @@ def Details(
 
 
 def Dfn(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -429,7 +429,7 @@ def Dfn(
 
 
 def Div(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -437,7 +437,7 @@ def Div(
 
 
 def Dl(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -445,7 +445,7 @@ def Dl(
 
 
 def Dt(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -453,7 +453,7 @@ def Dt(
 
 
 def Em(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -461,7 +461,7 @@ def Em(
 
 
 def Fieldset(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -469,7 +469,7 @@ def Fieldset(
 
 
 def Figcaption(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -482,7 +482,7 @@ def Figcaption(
 
 
 def Figure(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -490,7 +490,7 @@ def Figure(
 
 
 def Footer(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -498,7 +498,7 @@ def Footer(
 
 
 def Form(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -506,7 +506,7 @@ def Form(
 
 
 def H1(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -514,7 +514,7 @@ def H1(
 
 
 def H2(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -522,7 +522,7 @@ def H2(
 
 
 def H3(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -530,7 +530,7 @@ def H3(
 
 
 def H4(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -538,7 +538,7 @@ def H4(
 
 
 def H5(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -546,7 +546,7 @@ def H5(
 
 
 def H6(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -554,7 +554,7 @@ def H6(
 
 
 def Head(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -562,7 +562,7 @@ def Head(
 
 
 def Header(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -570,7 +570,7 @@ def Header(
 
 
 def Hgroup(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -578,7 +578,7 @@ def Hgroup(
 
 
 def Html(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -592,7 +592,7 @@ def Html(
 
 
 def I(  # noqa: E741, E743
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -600,7 +600,7 @@ def I(  # noqa: E741, E743
 
 
 def Iframe(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -608,7 +608,7 @@ def Iframe(
 
 
 def Ins(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -616,7 +616,7 @@ def Ins(
 
 
 def Kbd(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -624,7 +624,7 @@ def Kbd(
 
 
 def Keygen(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -632,7 +632,7 @@ def Keygen(
 
 
 def Label(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -640,7 +640,7 @@ def Label(
 
 
 def Legend(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -648,7 +648,7 @@ def Legend(
 
 
 def Li(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -656,7 +656,7 @@ def Li(
 
 
 def Map(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -664,7 +664,7 @@ def Map(
 
 
 def Mark(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -672,7 +672,7 @@ def Mark(
 
 
 def Menu(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -680,7 +680,7 @@ def Menu(
 
 
 def Meter(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -688,7 +688,7 @@ def Meter(
 
 
 def Nav(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -696,7 +696,7 @@ def Nav(
 
 
 def Noscript(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -704,7 +704,7 @@ def Noscript(
 
 
 def Object(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -712,7 +712,7 @@ def Object(
 
 
 def Ol(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -720,7 +720,7 @@ def Ol(
 
 
 def Optgroup(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -728,7 +728,7 @@ def Optgroup(
 
 
 def Option(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -736,7 +736,7 @@ def Option(
 
 
 def Output(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -744,7 +744,7 @@ def Output(
 
 
 def P(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -752,7 +752,7 @@ def P(
 
 
 def Pre(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -760,7 +760,7 @@ def Pre(
 
 
 def Progress(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -768,7 +768,7 @@ def Progress(
 
 
 def Q(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -776,7 +776,7 @@ def Q(
 
 
 def Rp(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -784,7 +784,7 @@ def Rp(
 
 
 def Rt(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -792,7 +792,7 @@ def Rt(
 
 
 def Ruby(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -800,7 +800,7 @@ def Ruby(
 
 
 def S(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -808,7 +808,7 @@ def S(
 
 
 def Samp(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -816,7 +816,7 @@ def Samp(
 
 
 def Script(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -824,7 +824,7 @@ def Script(
 
 
 def Section(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -832,7 +832,7 @@ def Section(
 
 
 def Select(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -840,7 +840,7 @@ def Select(
 
 
 def Small(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -848,7 +848,7 @@ def Small(
 
 
 def Span(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -856,7 +856,7 @@ def Span(
 
 
 def Strong(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -864,7 +864,7 @@ def Strong(
 
 
 def Style(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -872,7 +872,7 @@ def Style(
 
 
 def Sub(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -880,7 +880,7 @@ def Sub(
 
 
 def Summary(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -888,7 +888,7 @@ def Summary(
 
 
 def Sup(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -896,7 +896,7 @@ def Sup(
 
 
 def Table(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -904,7 +904,7 @@ def Table(
 
 
 def Tbody(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -912,7 +912,7 @@ def Tbody(
 
 
 def Td(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -920,7 +920,7 @@ def Td(
 
 
 def Textarea(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -928,7 +928,7 @@ def Textarea(
 
 
 def Tfoot(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -936,7 +936,7 @@ def Tfoot(
 
 
 def Th(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -944,7 +944,7 @@ def Th(
 
 
 def Thead(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -952,7 +952,7 @@ def Thead(
 
 
 def Time(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -960,7 +960,7 @@ def Time(
 
 
 def Title(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -968,7 +968,7 @@ def Title(
 
 
 def Tr(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -976,7 +976,7 @@ def Tr(
 
 
 def Ul(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -984,7 +984,7 @@ def Ul(
 
 
 def Var(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:
@@ -992,7 +992,7 @@ def Var(
 
 
 def Video(
-    children: FullTagChildren = [],
+    children: Children = [],
     class_: Class = [],
     **attr: Union[str, None],
 ) -> FullTag:

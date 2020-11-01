@@ -4,7 +4,7 @@ from nate import (
     H1,
     Body,
     Br,
-    DangerousHTML,
+    DangerousHtml,
     Div,
     Head,
     Hr,
@@ -129,7 +129,7 @@ class TagsTest(unittest.TestCase):
             "<p>&lt;script&gt;alert(&#x27;XSS&#x27;);&lt;/script&gt;</p>"
         self.assertEqual(p.to_html(), p_expected)
 
-        div = Div([DangerousHTML("<script>alert('XSS');</script>")])
+        div = Div([DangerousHtml("<script>alert('XSS');</script>")])
         div_expected = "<div><script>alert('XSS');</script></div>"
         self.assertEqual(div.to_html(), div_expected)
 
