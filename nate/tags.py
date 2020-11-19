@@ -83,16 +83,7 @@ class FullTag(BaseTag):
         yield from class_to_html(self.class_)
         yield from attr_to_html(self.attr)
         yield ">"
-        if isinstance(self.children, BaseTag):
-            yield from self.children.to_html()
-        elif isinstance(self.children, str):
-            yield escape(self.children)
-        elif isinstance(self.children, Iterable):
-            for child in self.children:
-                if isinstance(child, BaseTag):
-                    yield from child.to_html()
-                elif isinstance(child, str):
-                    yield escape(child)
+        yield from children_to_html(self.children)
         yield "</"
         yield self.tag
         yield ">"
@@ -136,16 +127,20 @@ class Fragment(BaseTag):
     children: Children
 
     def _to_html(self) -> Generator[str, None, None]:
-        if isinstance(self.children, BaseTag):
-            yield from self.children.to_html()
-        elif isinstance(self.children, str):
-            yield escape(self.children)
-        elif isinstance(self.children, Iterable):
-            for child in self.children:
-                if isinstance(child, BaseTag):
-                    yield from child.to_html()
-                elif isinstance(child, str):
-                    yield escape(child)
+        yield from children_to_html(self.children)
+
+
+def children_to_html(children: Children) -> Generator[str, None, None]:
+    if isinstance(children, BaseTag):
+        yield from children.to_html()
+    elif isinstance(children, str):
+        yield escape(children)
+    elif isinstance(children, Iterable):
+        for child in children:
+            if isinstance(child, BaseTag):
+                yield from child.to_html()
+            elif isinstance(child, str):
+                yield escape(child)
 
 
 def class_to_html(class_: Class) -> Generator[str, None, None]:
