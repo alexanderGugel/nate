@@ -19,6 +19,7 @@ from nate import (
     Th,
     Tr,
     Td,
+    Fragment,
 )
 
 from .common import article_1, article_2, html, section
@@ -284,6 +285,37 @@ whale&#x27;s tale coming crashing out of the water."/>\
 </section>\
 </body>\
 </html>\
+"""
+        self.assertEqual(actual, expected)
+
+    def test_fragment(self) -> None:
+        fragment = Div(
+            children=[
+                "before fragment",
+                Fragment(
+                    children=[
+                        Div(children="before nested fragment in div"),
+                        Fragment(
+                            children="nested fragment",
+                        ),
+                        Fragment(
+                            children=Div(children="nested fragment in div"),
+                        ),
+                        "after nested fragment",
+                    ],
+                ),
+                "after fragment",
+            ],
+        )
+        actual = fragment.to_html()
+        expected = """<div>\
+before fragment\
+<div>before nested fragment in div</div>\
+nested fragment\
+<div>nested fragment in div</div>\
+after nested fragment\
+after fragment\
+</div>\
 """
         self.assertEqual(actual, expected)
 

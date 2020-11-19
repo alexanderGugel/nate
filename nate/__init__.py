@@ -1,9 +1,10 @@
 from .tags import (  # noqa: F401
-    # Core types (useful for type hints)
+    # Core types
     BaseTag,
     Class,
     Attr,
     Children,
+    Fragment,
     # Escape hatch
     DangerousHtml,
     # Wrappers
